@@ -60,7 +60,15 @@ const determineWinner = (userChoice, computerChoice) => {
 
 const playGame = (userChoice) => {
     const computerChoice = getComputerChoice();
-    console.log(`You chose: ${userChoice}.`);
+    if (userChoice === 'rock') {
+        document.getElementById("userpic").innerHTML =   <div class="col-3 text-center ms-5" id="userpic">   <img src="./img/rock-removebg-preview.png" alt="rock" class="img-fluid"></img> </div>; 
+    } else if (userChoice === 'paper') {
+        document.getElementById("userpic").innerHTML =     <div class="col-3 text-center ms-5" id="userpic"> <img src="./img/paper-removebg-preview.png" alt="paper" class ="img-fluid"></img> </div>;
+    } else if (userChoice === 'scissors') {
+        document.getElementById("userpic").innerHTML =   <div class="col-3 text-center ms-5" id="userpic">  <img src="./img/scissor-removebg-preview.png" alt="scissor"  class= "img-fluid"></img> </div>;
+    } else {
+        document.getElementById("userpic").innerHTML =  <div class="col-3 text-center ms-5" id="userpic"> <img src="./img/istockphoto-1162198273-612x612.jpg" alt="?"></img> </div>;
+    }
     console.log(`Computer chose: ${computerChoice}.`);
 
     const result = determineWinner(userChoice, computerChoice);
