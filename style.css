@@ -1,0 +1,40 @@
+/*  for the game */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#userpic img,
+.computer-choice img {
+    width: 100px; 
+    height: auto; 
+}
+
+#resultMessage {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #28a745; 
+}
+
+#resultMessage.computer-win {
+    color: #dc3545; 
+}

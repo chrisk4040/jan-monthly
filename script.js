@@ -62,29 +62,33 @@ const playGame = (userChoice) => {
     const computerChoice = getComputerChoice();
     if (userChoice === 'rock') {
         document.getElementById("userpic").innerHTML = '<img src="./img/rock-removebg-preview.png" alt="rock" class="img-fluid">';
-
     } else if (userChoice === 'paper') {
         document.getElementById("userpic").innerHTML = '<img src="./img/paper-removebg-preview.png" alt="paper" class="img-fluid">';
-
     } else if (userChoice === 'scissors') {
         document.getElementById("userpic").innerHTML = '<img src="./img/scissor-removebg-preview.png" alt="scissor" class="img-fluid">';
-
     } 
 
-    
     document.querySelector('.computer-choice').innerHTML = `<img src="./img/${computerChoice}-removebg-preview.png" alt="${computerChoice}" class="img-fluid">`;
 
     console.log(`Computer chose: ${computerChoice}.`);
 
     const result = determineWinner(userChoice, computerChoice);
     console.log(result);
+    
+    // Update the HTML with the current scores
+    document.getElementById("userScore").innerText = userScore;
+    document.getElementById("computerScore").innerText = computerScore;
+
+    // Display the result message
+    document.getElementById("resultMessage").innerText = result;
+
     console.log(`User Score: ${userScore}, Computer Score: ${computerScore}`);
 
     if (userScore === 3) {
-        console.log('You are the overall winner!');
+        console.log('You are the winner!');
         resetGame();
     } else if (computerScore === 3) {
-        console.log('Computer is the overall winner!');
+        console.log('You Lost!');
         resetGame();
     }
 };
@@ -93,4 +97,9 @@ const resetGame = () => {
     computerScore = 0;
     userScore = 0;
     console.log('The game has been reset.');
+    // Reset the displayed scores in HTML
+    document.getElementById("userScore").innerText = userScore;
+    document.getElementById("computerScore").innerText = computerScore;
+    // Clear the result message
+    document.getElementById("resultMessage").innerText = '';
 };
